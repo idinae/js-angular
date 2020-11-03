@@ -1,0 +1,33 @@
+angular.io - useful style guide
+jquery - NO
+
+//package.json
+npm init -y
+
+//installation
+npm install typescript (-g) -> better not globally!!!
+.vscode 
+tsconfig.json
+
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "sourceMap": true
+  }
+}
+
+//run ts file
+tsc {filename}.ts
+npm run build
+
+//angular language service
+recommended plugin for angular
+
+//typescript materials
+typescriptlang.org
+
+* noImplicitAny - always declare type of variable
+
+//in package.json scripts
+"build": "tsc"

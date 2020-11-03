@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "system", //or CommonJS
+      "noImplicitAny": true, //no vars w/o implicit type
+      "removeComments": true,
+      "preserveConstEnums": true,
+      "outDir": "./dist/",
+      "sourceMap": true //debug inside typescript files
+    },
+    "include": [
+      "src/**/*"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "introangular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "testTS.js",
+  "dependencies": {
+    "typescript": "^4.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
