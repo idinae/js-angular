@@ -1,0 +1,70 @@
+[x] ПОДГОТОВКА
+    - целта е да се вдигне сървър и да се тества рутирането "на сухо"
+    - взима се скелето
+    - npm i
+    - npm start или npx nodemon start
+    - тества се рутирането: /, /register, /login, /create --> папка views/test
+    - изсипват се файловете на задачата в static/css и views
+    - чете се внимателно условието
+[x] VIEWS 
+    - целта е да се зареждат правилно: home, login, register
+    - логнат / нелогнат хващаме разликите -> по-пълното отива в home.hbs
+    - header, footer, notification* отиват в съотв. partials *ползва {{message}} от validatorRegister
+    - login и register (без <main></main>) отиват в съотв. hbs
+    - оправяме пътищата (href) в навигацията; ако има <a> без href, добавяме, напр. href="/"
+    ! трием стари cookies!!!
+[x] REGISTER
+    - register.hbs: action="/register" method="POST", name="" -> отива в req.body
+    - routes/auth: добавяме заявка get и съотв. milddleware ф-ция
+    - в header.hbs добавяме условието: {{#if isLoggedIn}}{{else}}{{/if}}
+    - в header.hbs добавяме notification: {{#if message}}{{>notification}}{{/if}}
+    - правим POST заявката: routes/auth: ползва async ф-цията controllers/user/saveUser()
+    - проверка в mongoDB и в Application/cookies за token
+    - валидацията: в controllers/validatorRegister: иментата идват от съотв. hbs, гледаме условията на задачата, добавяме още, оправяме regex-a...
+    - в routers/auth добавяме валидацията - като middleware, преди заявката към сървъра
+[x] LOGIN
+    - login.hbs: action="/login" method="POST", name=""
+    - валидацията: в controllers/validatorLogin: добавяме още, оправяме regex-a...
+    - routes/auth: добавяме get и post заявките
+    - проверка на рутирането при логнат потребител - да не достъпва отново login/register (middleware checkGestAccess)
+[x] LOGOUT
+    - трием cookie-то
+    - редирект ('/' или друго, ако е казано)
+[ ] HOME LOGGED/GUEST
+    - след като login работи, връщаме се да оправим home - какво вижда логнат потребител / гост
+    - на първо време добавяме и двете едно под друго, оправяме пътищата
+    - от повтарящите се неща оставяме по едно за всяко
+    - за сортирането също добавяме на линковете пътища: /sortDate, /sortLikes
+    - правим го с {{#if isLoggedIn}} {{else}} {{/if}}
+    - с втори вложен {{#if}} {{/if}} слагаме съобщението ако нямаме създадени пиеси --> после!!!
+[x] CREATE
+    - create.hbs - в него слагаме формата от create.html и оправяме action="/create" method="POST"; name="..."
+    - routes/index - get заявка create, ползваме и getUserStatus (оттук идва isLoggedIn) -> тестваме с бутона
+    - models/item - взимаме нужните полета от заданието и ги създаваме в модела
+    - routes/index - създаваме post заявката:
+      -- взимаме си елементите от формата за create - от req.body
+      -- взимаме user-а; нямаме го в req.body, но го взимаме с middleware checkAuthentication (req.user) -> слагаме да се ползва
+      -- console.log-ваме нещата, за да видим какво излиза
+      -- ако имаме check-box -> излиза ни "on", а трябва булева!!!
+      -- usersLiked не го взимаме на този етап, ще дойде после!!!
+      -- записваме с await item.save() и гледаме в db-то
+      -- добавяме try()-catch() на цялото 
+    - валидация -> controllers/validation; 
+      -- гледаме условието кои полета не може да са празни (title, description, umageUrl тук) - допълваме
+      -- ползваме validationResult(res) - добавяме го същото, както при юзъра, заедно с middleware validation
+[x] HOME според LOGGED / GUEST
+    - routes/index/get '/' - добавяме ф-ции за сортиране по лайкове и по дата
+    - отиваме в controllers/item и добавяме ф-циите - async, arrow
+    - views/home - добавяме сортировки по вид на юзъра: {{#each itemsGuest}}
+    - оправяме да взима пиесата от базата
+[x] DETAILS
+    - добавяме /details/{{_id}} в home.hbs
+    - правим details.hbs
+    - в controllers/item създаваме async функция getPlay за теглене от базата по id
+    - routes/index добавяме рутиране, като ползваме getPlay (за findById), checkAuthentication (за _id на юзъра), getUserStatus (за isLoggedIn)
+[x] ENROLLED
+    - в controllers/item създаваме async функция
+    - routes/index добавяме рутиране, като ползваме checkAuthentication
+[x] UPDATE
+    - правим edit.hbs
+    - добавяме рутирането и ф-цията

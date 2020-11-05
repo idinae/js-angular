@@ -1,14 +1,35 @@
+---------------------------------
+//Old course
+---------------------------------
+//installation -g
+npm install @angular/cli
+npm install typescript
+
+//create a project
+ng new some-app
+cd some-app
+npm install
+
+//start a dev server on port 4200
+ng serve
+
+//ng version
+gives the Angular version
+
+---------------------------------
+Current course
+---------------------------------
+
 angular.io - useful style guide
-jquery - NO
+jquery - do not use it with angular!!!
 
 //package.json
 npm init -y
 
 //installation
 npm install typescript (-g) -> better not globally!!!
-.vscode 
-tsconfig.json
-
+.vscode - not neccessary?
+tsconfig.json:
 {
   "compilerOptions": {
     "target": "es6",
@@ -30,4 +51,61 @@ typescriptlang.org
 * noImplicitAny - always declare type of variable
 
 //in package.json scripts
-"build": "tsc"
+"build": "tsc" -> run ts file with: npm run build
+
+//GIT - from repo folder:
+git init
+git remote add origin https://github.com/idinae/js-angular.git
+git push origin master
+
+//angular browser extension
+augury.rangle.io
+
+//type definition types - in repo DefinitelyTyped
+npm i @types/node
+npm i express
+npm i @types/express -> install types for express for example -> we can use express
+in .ts file: import * as express form 'express'
+
+//CLASS
+//we have public, privite, protected(<-достъпно в класа, който се наследява)
+
+class Greeter {
+  public greeting : string;
+  constructor(message : string) {
+    this.greeting = message;
+  }
+  greet() : string {
+    return `Hello, ${this.greeting}`;
+  }
+}
+
+//ANGULAR INSTALL
+npm i -g @angular/cli
+ng --version
+ng new my-first-app //make an app
+cd my-first-app
+ng serve //serve the app in browser
+! CLI - command line interface
+
+в app.component.html стоят всички компоненти, които се визуализират на страницата
+
+//като плъгин - единствено angular language service
+
+//@Component
+project-name/src/app/app.component.ts - съдържа една компонента: @Component
+селектор - показва кой компонент ще се търси, за да може да се създаде компонентата: app-root
+<app-root></app-root> се намира в нашия index.html
+като Angular види <app-root> - инициализира нова компонента от клас AppComponent
+класът е анотиран с декоратора @Component - той казва, че имаме две части:
+  - templateUrl: app.component.html, това е нашият темплейт
+  - app.component.css - стиловете
+
+//main.ts
+това е bootstrap файла, началото на Angular приложението
+
+//генериране на нова компонента
+ng g c test - generate component test
+
+//мобилни приложения с angular
+aionic

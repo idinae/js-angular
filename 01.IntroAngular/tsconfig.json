@@ -2,7 +2,7 @@
     "compilerOptions": {
       "target": "es6",
       "module": "system", //or CommonJS
-      "noImplicitAny": true, //no vars w/o implicit type
+      "noImplicitAny": true, //always to declare type of variable
       "removeComments": true,
       "preserveConstEnums": true,
       "outDir": "./dist/",
