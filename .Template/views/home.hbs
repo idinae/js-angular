@@ -1,65 +1,43 @@
-{{#if isLoggedIn}}
+<div id="banner" class="container"> <img src="./static/images/header-photo.jpg" width="1200" height="400" alt="" />
+</div>
+<div id="wrapper">
+    <div id="three-column" class="container">
+        <header>
+            <h2>Pellentesque tristique ante ut risus</h2>
+        </header>
 
-<h1 class="text-center">Courses</h1>
-<section>
-    <a href="/create" class="btn btn-warning ">Create Course</a>
-    <form class="search float-right">
-        <label>Search: </label>
-        <input type="text">
-        <input type="submit" class="btn btn-primary" value="Search">
-    </form>
-</section>
-
-
-<div class="container mt-3">
-    <div class="row ">
-        <div class="card-deck d-flex justify-content-center">
-            {{#each itemsLogged}}
-            <div class="card mb-4">
-                <img class="card-img-top" src="{{imageUrl}}" alt="Card image cap" width="400">
-                <div class="card-body">
-                    <h4 class="card-title">{{title}}</h4>
-                </div>
-                <div class="card-footer">
-                    <a href="/details/{{_id}}"><button type="button" class="btn btn-primary">Details</button></a>
-                    <small class="float-right">{{createdAt}}</small>
+        <div class="tbox1">
+            <div class="box-style box-style01">
+                <div class="content"> <a href="#" class="image image-full"><img src="./static/images/img01.jpg"
+                            alt=""></a>
+                    <h2>Fusce ultrices fringilla</h2>
+                    <p>Aliquam erat volutpat. Pellentesque tristique ante ut risus. Quisque dictum. Integer nisl risus,
+                        sagittis convallis, rutrum id, elementum congue, nibh. </p>
+                    <a href="#" class="button-style">Learn More</a>
                 </div>
             </div>
-            {{else}}
-            <h3 class="text-center">No courses...</h3>
-            {{/each}}
+        </div>
+        <div class="tbox2">
+            <div class="box-style box-style02">
+                <div class="content"> <a href="#" class="image image-full"><img src="./static/images/img02.jpg"
+                            alt=""></a>
+                    <h2>Mauris vulputate dolor</h2>
+                    <p>Aliquam erat volutpat. Pellentesque tristique ante ut risus. Quisque dictum. Integer nisl risus,
+                        sagittis convallis, rutrum id, elementum congue, nibh. </p>
+                    <a href="#" class="button-style">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="tbox3">
+            <div class="box-style box-style03">
+                <div class="content"> <a href="#" class="image image-full"><img src="./static/images/img03.jpg"
+                            alt=""></a>
+                    <h2>Nulla luctus eleifend </h2>
+                    <p>Aliquam erat volutpat. Pellentesque tristique ante ut risus. Quisque dictum. Integer nisl risus,
+                        sagittis convallis, rutrum id, elementum congue, nibh.</p>
+                    <a href="#" class="button-style">Learn More</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
-{{else}}
-
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4">Tutorials</h1>
-        <p class="lead">Start Self-Learning Today: Be the best Developer in the company</p>
-    </div>
-</div>
-
-
-<div>
-    <h1 class="text-center">Top Courses</h1>
-    <div class="container mt-3">
-        <div class="row d-flex justify-content-center">
-            {{#each itemsGuest}}
-            <div class="card-deck">
-                <div class="card mb-4">
-                    <img class="card-img-top" src="{{imageUrl}}" alt="Card image cap" width="400">
-                    <div class="card-body">
-                        <h4 class="card-title">{{title}}</h4>
-                        <small class="float-right">Enrolled: {{enrolled.length}}</small>
-                    </div>
-                </div>
-            </div>
-            {{else}}
-            <h3 class="text-center">No courses...</h3>
-            {{/each}}
-        </div>
-    </div>
-</div>
-{{/if}}

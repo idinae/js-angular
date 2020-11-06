@@ -8,11 +8,11 @@ module.exports = (app) => {
     app.use(express.json());
     app.use(express.urlencoded({ extended: true}));
     
-    //Setup the view engine
+    //setup the view engine
     app.engine('.hbs', handlebars({ extname: '.hbs' }));
     app.set('view engine', '.hbs'); 
 
-    //Setup the static files
+    //setup the static files
     app.use('/static', express.static('static'));
 
 };

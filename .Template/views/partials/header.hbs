@@ -1,26 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    <a class="navbar-brand" href="/">Tutorials</a>
+<div id="header" class="container">
+    <div id="logo">
+        <h1><a href="#"><span>Cook</span>Book</a></h1>
+    </div>
+    <div id="menu">
+        <ul>
+            {{#if isLoggedIn}}
+            <li class="active"><a href="/" accesskey="1" title="">Homepage</a></li>
+            <li><a href="/">Welcome, {{username}}</a></li>
+            <li><a href="/create" accesskey="4" title="">Create</a></li>
+            <li><a href="/logout" accesskey="4" title="">Logout</a></li>
+            {{else}}
+            <li class="active"><a href="/" accesskey="1" title="">Homepage</a></li>
+            <li><a href="/login" accesskey="3" title="">Login</a></li>
+            <li><a href="/register" accesskey="2" title="">Register</a></li>
+            {{/if}}
+        </ul>
+    </div>
+</div>
 
-    <ul class="navbar-nav ml-auto">
-        {{#if isLoggedIn}}
-        <li class="nav-item">
-            <a class="nav-link" href="/">Welcome, {{username}}</a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="/logout">Logout</a>
-        </li>
-        {{else}}
-        <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="/register">Register</a>
-        </li>
-        {{/if}}
-    </ul>
-</nav>
 {{#if message}}
 {{>notification}}
 {{/if}}
