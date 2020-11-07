@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-name-input',
@@ -6,7 +6,10 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./name-input.component.css']
 })
 export class NameInputComponent implements OnDestroy, OnInit {
-  
+
+  @Input() inputValue1 = 'Default Value';
+  @Output() btnClick = new EventEmitter();
+
   inputValue = 'Dummy value';
   
   btnClickHandler(value): void {
