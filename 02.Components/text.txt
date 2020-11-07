@@ -1,0 +1,61 @@
+//Components
+- controls part of the screen
+- each comp has its own html/css template
+
+//Comp metadata
+- selector: 'app-home'  //html selector
+- templateUrl: './app.component.html'  //path to the comp template
+- styleUrls: ['./app.component.css]  //css files
+
+@Component({
+    selector: '',
+    template: '',
+    styleUrl: ''
+})
+
+//generate a new component
+! Angular създава компонентите
+ng generate component home
+--> CLI creates new folder: src/app/home/
+--> CLI imports the comp in the app module
+
+//bootstrapping the app
+by appModule - the root module
+
+//go to app.component.ts
+export class AppComponent {
+  welcomeMessage = 'Hello!';
+}
+
+//go to app.component.htmp
+<div class="welcome-message">{{welcomeMessage}}</div>
+
+//create a new comp
+ng g c name-input
+! компонентата се добавя в app.module.ts
+! с името на селектора можем да я ползвяме
+
+//data binding
+//от компонентата към html-а
+{{}} <-- така се взима текст
+<input [value]="inputValue" type="text"> <--това в кавичките се възприема като JS и се търси като компонента
+//от темплейт към компонента - по името на събитието
+
+//директиви
+//директиви, които контролират структурата на елементите, започват със *
+*ngFor - render array props
+*ngIf - condition statements
+
+3 types of data binding:
+1/ from data-source to view: {{expression}} [target]="expression"
+2/ from view to data-source: (target)="statement"
+3/ two-way: [(ngModel)]="expression"
+
+//Lifecycle hooks
+ngOnInit()
+ngOnDestroy()
+ngOnChanges()
+ngDoCheck()
+ngAfterContentInit()
+ngAfterViewInit()
+

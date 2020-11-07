@@ -1,3 +1,12 @@
+npm i -g @angular/cli
+ng --version
+npm i typescript
+
+ng new my-app
+cd my-first-app
+ng serve
+
+
 ---------------------------------
 //Old course
 ---------------------------------
@@ -86,6 +95,7 @@ ng --version
 ng new my-first-app //make an app
 cd my-first-app
 ng serve //serve the app in browser
+
 ! CLI - command line interface
 
 в app.component.html стоят всички компоненти, които се визуализират на страницата

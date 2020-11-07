@@ -1,0 +1,12 @@
+<!-- <input [value]="inputValue" type="text"> -->
+<!-- <button (click)="btnClickHandler('TEXT')">Click me!</button> -->
+<input [value]="inputValue" (keyup)="btnKeyupHandler($event)" type="text"> 
+{{inputValue}}
+IsVisible
+<button (click)="btnClickHandler($event)">Click me!</button>
+
+
+<input type="text" #inputEl> <!-- const inputEl = document.createElement('input'); -->
+{{inputEl.value}}
+
+<button (click)="btnClickHandlerNew($event, inputEl)">Click me!</button>
