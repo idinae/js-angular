@@ -70,7 +70,9 @@ a img {
 	width: auto;
 }
 
-img.border {}
+img.border {
+	border: none;
+}
 
 img.alignleft {
 	float: left;
@@ -221,19 +223,16 @@ ul.style5 span {
 }
 
 ul.style5 .address {
-	float: left;
 	width: 80px;
 	display: inline-block;
 	font-weight: 600;
 }
 
 ul.style5 .address-01 {
-	float: left;
 	display: inline-block;
 }
 
 ul.style5 .mail {
-	float: left;
 	width: 80px;
 	display: inline-block;
 	font-weight: 600;
@@ -244,14 +243,12 @@ ul.style5 .mail-01 {
 }
 
 ul.style5 .phone {
-	float: left;
 	width: 80px;
 	display: inline-block;
 	font-weight: 600;
 }
 
 ul.style5 .phone-01 {
-	float: left;
 	display: inline-block;
 }
 
@@ -366,15 +363,9 @@ ul.style5 .first {
 
 /** PAGE */
 
-#page {}
 
 /** CONTENT */
 
-#content {}
-
-/** SIDEBAR */
-
-#sidebar {}
 
 /* Footer */
 
