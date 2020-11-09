@@ -1,11 +1,14 @@
 npm i -g @angular/cli
 ng --version
-npm i typescript
-
 ng new my-app
-cd my-first-app
+cd my-app
 ng serve
 
+ng g component //creates a new component
+npm i bootstrap --save
+
+в angular.json, styles добавяме ред:
+"../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 ---------------------------------
 //Old course

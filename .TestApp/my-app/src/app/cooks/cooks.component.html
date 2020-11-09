@@ -1,0 +1,24 @@
+<div class="col-sm-4" *ngFor="let cook of cooks">
+  <div class="thumbnail">
+    <a href="#"><img src="./../assets/images/{{ cook.imageUrl }}" alt=""></a>
+    <h2>{{ cook.name }}</h2>
+    <p>{{ cook.descriptionShort }}
+    </p>
+    <a href="#" class="button-style">Детайли</a>
+  </div>
+</div>
+
+<!--
+<div *ngFor="let cook of cooks" class="col-sm-4">
+    <div class="thumbnail">
+      <div class="box-style box-style01">
+        <div class="content"> <a href="#" class="image image-full"><img src="./../assets/{{ cook.imageUrl }}" alt=""></a>
+          <h2>{{ cook.name }}</h2>
+          <p>{{ cook.descriptionShort }}
+          </p>
+          <a href="#" class="button-style">Детайли</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
