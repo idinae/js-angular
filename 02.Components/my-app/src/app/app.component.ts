@@ -27,6 +27,10 @@ const users = [
 export class AppComponent {
   welcomeMessage = 'Hello!';
 
+  data = {
+    name: 'TEST'
+  }
+
   isVisible = false;
 
   toggleHandler(): void {

@@ -1,24 +1,19 @@
-<div class="col-sm-4" *ngFor="let cook of cooks">
-  <div class="thumbnail">
-    <a href="#"><img src="./../assets/images/{{ cook.imageUrl }}" alt=""></a>
-    <h2>{{ cook.name }}</h2>
-    <p>{{ cook.descriptionShort }}
-    </p>
-    <a href="#" class="button-style">Детайли</a>
-  </div>
-</div>
+<div id="wrapper">
+  <div id="three-column" class="container">
+    <header>
+      <h2>Топ 3 най-харесвани рецепти</h2>
+    </header>
 
-<!--
-<div *ngFor="let cook of cooks" class="col-sm-4">
-    <div class="thumbnail">
-      <div class="box-style box-style01">
-        <div class="content"> <a href="#" class="image image-full"><img src="./../assets/{{ cook.imageUrl }}" alt=""></a>
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let cook of cooks">
+        <div class="thumbnail">
+          <a href="/details/{{cook.id}}"><img src="./../assets/images/{{ cook.imageUrl }}" alt=""></a>
           <h2>{{ cook.name }}</h2>
           <p>{{ cook.descriptionShort }}
           </p>
-          <a href="#" class="button-style">Детайли</a>
+          <a href="/details/{{cook.id}}" class="button-style">Детайли</a>
         </div>
       </div>
     </div>
   </div>
-  -->
+</div>
