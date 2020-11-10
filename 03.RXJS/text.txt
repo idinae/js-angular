@@ -1,0 +1,13 @@
+RXJS - reactive extensions for JS
+nmp i RXJS
+
+//use with CommonJS
+const {range} = require('rxjs');
+const {map, filter} = require('rxjs/operators');
+
+//use with import/export
+import {range} from 'rxjs';
+import {map, filter} from 'rxjs/operators';
+
+//stackblitz.com
+https://rxjs-fkrlvm.stackblitz.io
