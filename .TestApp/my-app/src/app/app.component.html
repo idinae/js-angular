@@ -8,21 +8,33 @@
 
 <body>
 
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
+
+  <div id="header" class="container">
+    <div id="logo">
+      <h1><a href="#"><span>Cook</span>Book</a></h1>
+    </div>
+    <div id="menu">
       <ul>
-        <li><a href="/" class="navbar-brand" title="">Homepage</a></li>
-        <li><a href="/login" class="navbar-brand" title="">Login</a></li>
-        <li><a href="/register" class="navbar-brand" title="">Register</a></li>
+
+        <li class="active"><a href="/" accesskey="1" title="">Homepage</a></li>
+        <li><a href="/login" accesskey="3" title="">Login</a></li>
+        <li><a href="/register" accesskey="2" title="">Register</a></li>
+
       </ul>
     </div>
-  </nav>
-
-  <div class="container" id="banner"> <img src="../assets/images/img1.jpg" width="1200" height="400" alt="" />
   </div>
 
-  <div class="container">
-    <app-cooks></app-cooks>
+
+
+
+
+  <div id="banner" class="container"> <img src="../assets/images/img1.jpg" width="1180" height="393" alt="" />
+  </div>
+
+
+
+  <div id="wrapper">
+      <app-cooks id="three-column" class="container"></app-cooks>
   </div>
 
 </body>

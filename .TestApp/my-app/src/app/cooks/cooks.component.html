@@ -1,19 +1,9 @@
-<div id="wrapper">
-  <div id="three-column" class="container">
-    <header>
-      <h2>Топ 3 най-харесвани рецепти</h2>
-    </header>
+<div id="three-column" class="container">
+  <header>
+    <h2>Топ 3 най-харесвани рецепти</h2>
+  </header>
 
-    <div class="row">
-      <div class="col-sm-4" *ngFor="let cook of cooks">
-        <div class="thumbnail">
-          <a href="/details/{{cook.id}}"><img src="./../assets/images/{{ cook.imageUrl }}" alt=""></a>
-          <h2>{{ cook.name }}</h2>
-          <p>{{ cook.descriptionShort }}
-          </p>
-          <a href="/details/{{cook.id}}" class="button-style">Детайли</a>
-        </div>
-      </div>
-    </div>
+  <div *ngFor="let cook of cooks">
+      <app-cooks-card [cook]="cook"></app-cooks-card>
   </div>
 </div>
