@@ -11,3 +11,5 @@ import {map, filter} from 'rxjs/operators';
 
 //stackblitz.com
 https://rxjs-fkrlvm.stackblitz.io
+
+const users$ - по конвенция се слага $ накрая, когато е поток от данни
