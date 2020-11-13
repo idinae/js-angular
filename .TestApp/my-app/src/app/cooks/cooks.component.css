@@ -1,18 +1,28 @@
-/** WRAPPER */
-
-#wrapper {
-	margin-top: 30px;
-	padding-bottom: 50px;
-	background: #FFF;
-}
 
 .container {
 	width: 1200px;
 	margin: 0px auto;
 }
 
-/* Three Column Content */
+header h1, h2, h3 {
+	padding: 20px 0px 20px 0px;
+	text-transform: uppercase;
+	font-family: 'Arial Narrow', Arial, sans-serif;
+}
 
+
+
+/** WRAPPER */
+/*
+#wrapper {
+	margin-top: 30px;
+	padding-bottom: 50px;
+	background: #FFF;
+}
+
+*/
+/* Three Column Content */
+/*
 #three-column {
 	overflow: hidden;
 	padding-top: 30px;
@@ -49,3 +59,4 @@
 	float: right;
 	width: 384px;
 }
+*/

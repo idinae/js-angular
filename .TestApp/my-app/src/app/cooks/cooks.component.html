@@ -1,9 +1,11 @@
-<div id="three-column" class="container">
+<div class="container">
   <header>
-    <h2>Топ 3 най-харесвани рецепти</h2>
+    <h2>Топ 3 рецепти</h2>
   </header>
 
-  <div *ngFor="let cook of cooks">
-      <app-cooks-card [cook]="cook"></app-cooks-card>
+<div class="row">
+  <div *ngFor="let cook of cooks" class="col-sm-4">
+    <app-cooks-card [cook]="cook"></app-cooks-card>
   </div>
+</div>
 </div>
