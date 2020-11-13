@@ -1,0 +1,7 @@
+//cmd (not mongo)
+mongorestore -d forum "D:\forum"
+//node
+npm i
+ng new comp
+cd comp
+ng serve
