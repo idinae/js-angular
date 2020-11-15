@@ -1,7 +1,23 @@
-//cmd (not mongo)
+[ ] Подготовка на средата
+1. Импортва се базата данни през CMD (не през mongo)
 mongorestore -d forum "D:\forum"
-//node
+2. Инсталира се необходимото от package.json
 npm i
+3. Създава се инстанция на Angular
 ng new comp
 cd comp
 ng serve
+4. Всички ресурси се копират в същата папка
+    - може да се ползват линковете -> слагат се в head на файла index.html в проекта
+    - може да се свалят, което е по-добре -> слагат се в папката assets и се реферират: '/assets/fontname'
+
+[ ] Разхвърляме структурата на страницата по компоненти
+1. Генерират се компоненти според темплейта:
+    - header: ng g c header
+    - footer: ng g c footer
+    - aside: ng g c aside 
+    - theme-list: ng g c theme-list
+2. Слагаме съответните части от html-а в компонентите
+    - в index.html слагаме основните части и селекторите на header, root и footer - компонентите, които ще бъдат като bootstrap
+      те четат съответно от компонентите app-header, app.module (root) и app-footer
+    - в app.module.ts, bootstrap: добавяме HeaderComponent, FooterComponent
