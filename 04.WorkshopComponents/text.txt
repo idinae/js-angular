@@ -20,4 +20,7 @@ ng serve
 2. Слагаме съответните части от html-а в компонентите
     - в index.html слагаме основните части и селекторите на header, root и footer - компонентите, които ще бъдат като bootstrap
       те четат съответно от компонентите app-header, app.module (root) и app-footer
+    - разхвърляме html-а от темплейта в html-ите на нашето приложение, като в index.html слагаме нещата, които са за homepage
     - в app.module.ts, bootstrap: добавяме HeaderComponent, FooterComponent
+
+
