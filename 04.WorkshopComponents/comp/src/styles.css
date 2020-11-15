@@ -115,7 +115,7 @@ nav {
 
 /* main  */
 
-main {
+app-theme-list {
     width: 50%;
 }
 
@@ -188,7 +188,7 @@ time {
 
 /* aside  */
 
-aside {
+app-aside {
     width: 29%;
     margin-top: 1em;
     font-size: 0.8em;
@@ -197,6 +197,7 @@ aside {
 .aside * {
     margin: 0;
     padding: 0;
+    margin-left: 30px;
 }
 
 .aside>div {
@@ -257,4 +258,8 @@ footer p {
 
 footer span {
     font-size: 1.5em;
+}
+
+app-root {
+    display: flex;
 }
