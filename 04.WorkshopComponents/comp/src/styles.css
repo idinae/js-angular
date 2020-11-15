@@ -1,7 +1,7 @@
-@import url('reset.css');
-@import url('layout.css');
-@import url('typography.css');
-@import url('responsive.css');
+@import url('./assets/reset.css');
+@import url('./assets/layout.css');
+@import url('./assets/typography.css');
+@import url('./assets/responsive.css');
 
 body {
     max-width: 1366px;
