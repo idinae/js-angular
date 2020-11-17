@@ -22,5 +22,8 @@ ng serve
       те четат съответно от компонентите app-header, app.module (root) и app-footer
     - разхвърляме html-а от темплейта в html-ите на нашето приложение, като в index.html слагаме нещата, които са за homepage
     - в app.module.ts, bootstrap: добавяме HeaderComponent, FooterComponent
+    - разхвърляме css-a по отделните компоненти
+3. Генерираме сървис user, който ще се грижи за това дали сме логнати или не:
+     ng g s user
 
 
