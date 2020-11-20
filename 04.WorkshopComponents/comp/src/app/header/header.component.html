@@ -3,7 +3,7 @@
     <div class="logo-wrap">
       <p class="logo"><span class="logo">SoftUni Forum</span></p>
     </div>
-    <div class="mini-navbar" *ngIf="!userService.isLogged">
+    <div class="mini-navbar" *ngIf="!isLogged">
       <ul>
         <li>
           <a href="#" (click)="loginHandler()">Login</a>
@@ -13,7 +13,7 @@
         </li>
       </ul>
     </div>
-    <div class="mini-navbar" *ngIf="userService.isLogged">
+    <div class="mini-navbar" *ngIf="isLogged">
         <div>Hello, [username]@localdomain.com</div>
         <a (click)="logoutHandler()">Logout</a>
     </div>

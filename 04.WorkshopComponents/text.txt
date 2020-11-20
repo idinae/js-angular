@@ -31,6 +31,8 @@ ng serve
     - в user.service.ts добавяме метод за login, махаме останалото
 4. В header.component.html се добавя *ngIf="userService.isLogged" - какво да се вижда в зависимост дали потребителят е логнат
     - добавят се loginHandler() и logoutHandler() в header.component.html
-    - в header.component.ts се добавя 
-
+    - в header.component.ts се добавя
+    - в app.module.ts се добавя: providers: [UserService]
+    - в компонентата можем да направим getter: get isLogged(): boolean {return this.userService.isLogged}
+      така в html-а използваме директно променливата isLogged
 

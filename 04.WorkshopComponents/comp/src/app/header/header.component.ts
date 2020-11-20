@@ -8,6 +8,10 @@ import { UserService } from '../user.service';
 })
 export class HeaderComponent {
 
+  get isLogged(): boolean {
+    return this.userService.isLogged;
+  }
+
   constructor(public userService: UserService) { 
     
   }
