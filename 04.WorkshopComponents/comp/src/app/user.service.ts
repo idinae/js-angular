@@ -12,6 +12,6 @@ export class UserService {
   }
 
   logout(): void {
-    this.isLogged: false;
+    this.isLogged = false;
   }
 }

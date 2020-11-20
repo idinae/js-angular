@@ -29,5 +29,8 @@ ng serve
       constructor(public userService: UserService) { ... }
       по този начин се създава инстанция на сървиса, която се използва в приложението, дори да се извика от друг сървис
     - в user.service.ts добавяме метод за login, махаме останалото
+4. В header.component.html се добавя *ngIf="userService.isLogged" - какво да се вижда в зависимост дали потребителят е логнат
+    - добавят се loginHandler() и logoutHandler() в header.component.html
+    - в header.component.ts се добавя 
 
 
