@@ -14,7 +14,7 @@ export class ThemeListComponent implements OnInit {
   constructor(private themeService: ThemeService) { }
 
   ngOnInit(): void {
-    this.themeService.loadThemeList().subscribe((themeList) => {
+    this.themeService.loadThemeList().subscribe(themeList => {
       this.themeList = themeList;
     });
   }

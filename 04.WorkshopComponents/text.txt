@@ -47,5 +47,8 @@ ng serve
     ! Ако се деплойва на production, добавя се в environment.prod.ts
 8. Правим theme-list-component.ts - ngOnInit
     - добавяме ThemeService в провайдерите на app.module.ts
-!!! интерфейсите се ползват, когато се работи с обекти, които се връщат на api сървър (data transfer objects, dto), не се транслират до js
+    !!! интерфейсите се ползват, когато се работи с обекти, които се връщат на api сървър (data transfer objects, dto), не се транслират до js
     иначе се ползват класове
+    - в theme-list-item.component добавяме  @Input() theme: ITheme и вече може да ползваме {{}} в html-a
+9. Правим theme-list.ts
+    - *ngFor
