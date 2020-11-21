@@ -5,7 +5,9 @@ export class UserService {
 
   isLogged = false;
 
-  constructor() { }
+  constructor() {
+    
+   }
   
   login(): void {
     this.isLogged = true;
