@@ -36,3 +36,12 @@ ng serve
     - в компонентата можем да направим getter: get isLogged(): boolean {return this.userService.isLogged}
       така в html-а използваме директно променливата isLogged
 5. Правим сървис storage: ng g s storage
+    - имплементираме го
+6. Правим сървис team: ng g s theme
+    - импортва се в app.module.ts
+    - правим си папка interfaces/theme.ts - тук слагаме структурата на темите:
+        -- от mongo db.themes.find().pretty()
+        -- по структурата правим модели на theme, user
+        -- правим index.ts, в който експортваме theme, user, после импортваме от './interfaces' - нарича се barrow
+7. В environment.ts добавяме apiUrl: 'http://localhost:300/api'
+    ! Ако се деплойва на production, добавя се в environment.prod.ts
