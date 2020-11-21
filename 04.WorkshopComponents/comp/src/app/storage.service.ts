@@ -1,7 +1,14 @@
 import { Injectable, Provider, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common'
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
-export class StorageService {
+interface IStorage {
+  setItem<T>(key: string, item: T): T;
+  getItem<T>(key: string): T;
+}
+
+export class StorageService implements IStorage {
+  setItem<T>(key, item): T { return item; }
+  getItem<T>(key): T { return null; }
 }
 
 export function storageFactory(platformId: string): any {
@@ -24,7 +31,8 @@ export const storageServiceProvider: Provider = {
 export class BrowserStorage {
   localStorage = localStorage;
   setItem<T>(key: string, item: T): T  {
-    this.localStorage.setItem(key, JSON.stringify(item));
+    const str = typeof item === 'string' ? item : JSON.stringify(item);
+    this.localStorage.setItem(key, str);
     return item;
   }
   getItem<T>(key: string): T {
