@@ -45,3 +45,7 @@ ng serve
         -- правим index.ts, в който експортваме theme, user, после импортваме от './interfaces' - нарича се barrow
 7. В environment.ts добавяме apiUrl: 'http://localhost:300/api'
     ! Ако се деплойва на production, добавя се в environment.prod.ts
+8. Правим theme-list-component.ts - ngOnInit
+    - добавяме ThemeService в провайдерите на app.module.ts
+!!! интерфейсите се ползват, когато се работи с обекти, които се връщат на api сървър (data transfer objects, dto), не се транслират до js
+    иначе се ползват класове
