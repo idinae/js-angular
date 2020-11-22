@@ -51,4 +51,14 @@ ng serve
     иначе се ползват класове
     - в theme-list-item.component добавяме  @Input() theme: ITheme и вече може да ползваме {{}} в html-a
 9. Правим theme-list.ts
-    - *ngFor
+    - *ngFor ...
+    - сървърът на nodejs приложението също трябва да работи!
+10. Правим aside
+    - ng g s post
+    - добавяме environment
+    - добавяме го в провайдерите на app.module
+    - правим интерфейс post.ts
+! за повтарящите се интерфейси правим base.ts
+    - метод loadPostList(), който ползваме в aside
+! limit? означава, че конкретното нещо не е задължително да се подаде
+    - заместваме в aside.html
