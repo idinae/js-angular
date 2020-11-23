@@ -12,4 +12,9 @@
 2. Създаваме SharedModule и CoreModule: ng g m shared, ng g m core - създават се в папка app
 3. Отиваме в src/app/app-routing.module.ts:
    export const AppRoutingModule = RouterModule.forRoot(routes);
+4. В app.component.html се е създало <router-outlet></router-outlet> - показва къде ще се визуализират страниците от рутера
+   a/ home
+   - ng g c home
+   - в app-routing.module.ts  - routes слагаме { path: '', pathMatch: 'full', component: HomeComponent }
+   - над <router-outlet> се появява <app-home> ако погледнем в chrome dev tool
    
