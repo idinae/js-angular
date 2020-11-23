@@ -1,0 +1,15 @@
+@NgModule - с него можем да създаваме собствени модули
+@CommonModule - от него идват структурните директиви *ngFor, *ngIf
+
+Едно приложение трябва да има поне:
+- SharedModule - общи функционалности: компоненти, директиви, pipes
+- CoreModule - компоненти и сървиси, които се използват веднъж, напр. навигация
+
+Ново приложение с рутиране
+1. Създаване на проекта
+   ng new app-with-router -> казваме, че ще ползваме рутиране, със CSS
+   cd app-with-router
+2. Създаваме SharedModule и CoreModule: ng g m shared, ng g m core - създават се в папка app
+3. Отиваме в src/app/app-routing.module.ts:
+   export const AppRoutingModule = RouterModule.forRoot(routes);
+   
