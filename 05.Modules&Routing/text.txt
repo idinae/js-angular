@@ -38,4 +38,12 @@
    ! за админ може да се създаде друга компонента, която с *ngIf да се визулаизира от app.component
    ползваме [ngClass]="{ 'admin': isAdmin}" в html-а на навигацията, а isAdmin се декларира в ts-файла на навигацията
 6. USER модул
+   - ще има собствена навигация
    - ng g m user
+   - ng g c user/list
+   - ng g c user/detail
+   - в папка user създаваме user-routing.module.ts и взимаме кода от app-routing.module, но 
+      : заместваме Home и About с ListComponent и DetailComponent
+      : сменяме адреса, името на компонентата
+      : името на const, която се експортва
+      : forChild вместо forRoot
