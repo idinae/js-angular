@@ -47,3 +47,5 @@
       : сменяме адреса, името на компонентата
       : името на const, която се експортва
       : forChild вместо forRoot
+   - в imports на user.module слагаме и UserRoutingModule
+   - слагаме UserModule в app.module.ts
