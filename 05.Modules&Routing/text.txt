@@ -34,3 +34,4 @@
 ! в imports на @NgModule се слагат само други модули
 5. НАВИГАЦИЯ
    - не се ползва href, а angular рутера: директивата routerLink="/", атрибутна, а не е структурна и затова не е със *
+   - в core.module.ts се добавя RouterModule в imports -> вече работи!
