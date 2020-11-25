@@ -54,3 +54,8 @@
       : ng g s user/user
       : добавяме HttpClient модул и функция loadUsers() в user.service.ts
    - в list.component в ngOnInit() ползваме loadUsers()
+   - импортваме в user.modul.ts SharedModlule
+   - в list.component.html: <app-loader [showLoader]="!userList"> - *ngIf - *ngFor
+   - за да вземем :id на detail: 
+      вар.1: "'/user/detail/' + user.id" - така вече се възприема като JS
+      вар.2: [routerLink]="['/user/detail', user.id]"
