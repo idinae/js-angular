@@ -5,13 +5,18 @@ import { DetailComponent } from './detail/detail.component';
 
 const routes: Routes = [
   {
+    path: 'user',
+    redirectTo: 'user/list'
+  },
+  {
     path: 'user/list',
     component: ListComponent
   },
   {
-    path: 'user/:id',
+    path: 'user/detail/:id',
     component: DetailComponent
   }
 ];
 
 export const UserRoutingModule = RouterModule.forChild(routes);
+
