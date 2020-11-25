@@ -49,4 +49,8 @@
       : forChild вместо forRoot
    - в imports на user.module слагаме и UserRoutingModule
    - слагаме UserModule в app.module.ts
-7. Добавяме HttpClientModule в app.module.ts - така можем да го ползваме навсякъде
+   - добавяме HttpClientModule в app.module.ts - така можем да го ползваме навсякъде
+   - USER сървис
+      : ng g s user/user
+      : добавяме HttpClient модул и функция loadUsers() в user.service.ts
+   - в list.component в ngOnInit() ползваме loadUsers()
