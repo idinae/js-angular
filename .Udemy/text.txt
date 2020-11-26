@@ -1,0 +1,5 @@
+1. First Steps
+   - npm i -g @angular/cli
+   - ng new my-app
+   - cd my-app
+   - ng s
