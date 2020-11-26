@@ -59,3 +59,5 @@
    - за да вземем :id на detail: 
       вар.1: "'/user/detail/' + user.id" - така вече се възприема като JS
       вар.2: [routerLink]="['/user/detail', user.id]"
+   - добавяме loadUser - за конкретното id - ползваме го в detail
+      : импортваме и ползваме ActivatedRoute в detail.component.ts
