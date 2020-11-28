@@ -3,3 +3,25 @@
    - ng new my-app
    - cd my-app
    - ng s
+
+2. Ако даден модул не тръгва, значи липсва в app.module.ts - добавяме го ръчно
+   - <input type="text" [(ngModel)]="name">  <-- тук name е пропъртито, което се взима от input-а и предава като output; ползваме го чрез ngModel, който се импортва от FormsModule, @angular/forms, добавя се и в imports
+    <p>{{ name }}</p>
+
+3. Компоненти
+!  - npm i --save bootstrap@3  <-- ако решим да ползваме bootstrap, v.3
+   - angular.json-architect-build-stypes: добавя се на 1-во място "node_modules/bootstrap/dist/css/bootstrap.min.css"
+   - компонентата е js клас - създаваме нова папка server и файл server.component.ts
+   - добавя се декоратор @Component({}) <-- вътре има JS, представляващ метаданни за класа
+   - добавяме компонентите в декларациите на app.module.ts, @NgModule
+   - в app.module.ts, imports се добавят други модули
+   - ng g c server - вместо да се създават ръчно
+   - constructor: setTimeout(() => { this.allowNewServer = true; }, 2000); - трябва да се bind-не, за да работи --> 
+   - property binding --> []="" - в server.component.html [disabled] се слага в [] скоби = dynamic property binding
+   - event binding --> ()="" - (click)="onCreateServer()"
+     : (input)="onUpdatedServerName($event)" $event <- запазената променлива event, която ни дава достъп до данните на event-a
+     : взимаме аргумента $event и го предаваме на ф-цията - може да го console.log()
+     : target е елемента, върху който се е случило събитието
+     : target.value e value на input-a
+     : event: Event - имаме такъв тип
+   - two-way data binding --> [()] - 
