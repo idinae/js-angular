@@ -32,8 +32,11 @@
    = обикновено ги добавяме със селектора за атрибути
    - @Directive({selector: '[appTurnGreen]'}) --> <p appTurnGreen>Green</p>
    a/ структурни директиви - променят структурата на DOM: *ngIf, *ngFor, добавят и премахват елементи
-   б/ attribute directives - променят елемента върху който са поставени: ngStyle
+   б/ attribute directives - променят елемента върху който са поставени: ngStyle, ngClass; в html елемента се слагат в [] - property binding
 ! Math.randon() - връща случайна стойност между 0 и 1, floating point
-      в конструктора: this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
-      в <p> на html-а: <p [ngStyle]="{backgroundColor: getColor()}"> - очаква JS, key: value
-
+      : ngStyle - позволява динамично да променяме стила
+        -> в конструктора: this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+        -> в <p> на html-а: <p [ngStyle]="{backgroundColor: getColor()}"> - очаква JS, key: value
+      : ngClass - позволява динамично да добавяме или премахваме css-класове
+        -> в компонентата добавяме styles: [`.online {color: white;}`]
+        -> в html-а добавяме [ngClass]="{online: serverStatus === 'online'}" - двойка стил: условие - добавя стил, ако условието е true, т.е. стилът е online, ако serverStatus e online
