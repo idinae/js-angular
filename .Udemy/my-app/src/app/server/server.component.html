@@ -1,4 +1,4 @@
-<p>The {{'Server'}} with Id {{serverId}} is {{getServerStatus()}}</p>
+<p [ngStyle]="{backgroundColor: getColor()}">The {{'Server'}} with Id {{serverId}} is {{getServerStatus()}}</p>
 
 <label for="">Server Name</label>
 <input type="text" class="form-control" (input)="onUpdatedServerName($event)">
@@ -27,3 +27,5 @@
     [disabled]="username === ''"
     (click)="onReset()"
     >Reset User</button>
+
+<p [ngStyle]="getColor()"></p>

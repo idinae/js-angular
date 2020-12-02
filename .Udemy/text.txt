@@ -31,5 +31,9 @@
    = директивите са инструкции в DOM
    = обикновено ги добавяме със селектора за атрибути
    - @Directive({selector: '[appTurnGreen]'}) --> <p appTurnGreen>Green</p>
-   a/ структурни директиви - променят структурата на DOM: *ngIf, *ngFor
+   a/ структурни директиви - променят структурата на DOM: *ngIf, *ngFor, добавят и премахват елементи
+   б/ attribute directives - променят елемента върху който са поставени: ngStyle
+! Math.randon() - връща случайна стойност между 0 и 1, floating point
+      в конструктора: this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+      в <p> на html-а: <p [ngStyle]="{backgroundColor: getColor()}"> - очаква JS, key: value
 
