@@ -32,6 +32,10 @@
    = обикновено ги добавяме със селектора за атрибути
    - @Directive({selector: '[appTurnGreen]'}) --> <p appTurnGreen>Green</p>
    a/ структурни директиви - променят структурата на DOM: *ngIf, *ngFor, добавят и премахват елементи
+      : ngFor - добавяне на елементи
+        -> в класа добавяме променлива тип масив servers = ['TestServer 1', 'TestServer 2']
+        -> в onCreateServer() добавяме this.servers.push(this.serverName);
+        -> в html-а добавяме *ngFor="let server of servers" - временна променлива с произволно име + името на променливата от typescript файла
    б/ attribute directives - променят елемента върху който са поставени: ngStyle, ngClass; в html елемента се слагат в [] - property binding
 ! Math.randon() - връща случайна стойност между 0 и 1, floating point
       : ngStyle - позволява динамично да променяме стила

@@ -15,13 +15,8 @@ export class ServerComponent {
     serverStatus: string = 'offline';
     //serverName = '';
     serverName = 'Testserver';
-    
+    servers = ['TestServer 1', 'TestServer 2'];
     username = '';
-    
-    getServerStatus() {
-        return this.serverStatus;
-    }
-
     allowNewServer = false;
     serverCreationStatus = 'No server was created!';
 
@@ -30,11 +25,15 @@ export class ServerComponent {
             this.allowNewServer = true;
         }, 2000);
         this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+    }
 
+    getServerStatus() {
+        return this.serverStatus;
     }
 
     onCreateServer() {
         this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
+        this.servers.push(this.serverName);
     }
 
     onUpdatedServerName(event: Event) {
