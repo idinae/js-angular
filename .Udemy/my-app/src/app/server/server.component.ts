@@ -59,7 +59,7 @@ export class ServerComponent {
         if(this.visibleContent === true) {
             this.numPushed++;
             this.buttonPushArr.push(this.numPushed);
-            if(this.numPushed === 5) {
+            if(this.numPushed === 5 && this.numPushed <= 10) {
                 this.colorChanged = true;
             }
         }
@@ -68,8 +68,10 @@ export class ServerComponent {
     }
 
     checkBackColor() {
-        if(this.colorChanged === true) {
+        if(this.colorChanged === true && this.numPushed <= 10) {
             return 'blue';
+        } else if (this.colorChanged === true && this.numPushed < 20) {
+            return 'green';
         }
     }
 
