@@ -27,3 +27,7 @@ III. СЪЗДАВАНЕ НА КОМПОНЕНТИТЕ
   5. RECIPE-ITEM
     = в папката recipe-list
     - ng g c recipes/recipe-list/recipe-item --skipTests true
+  6. SHOPPING-LIST
+    - ng g c shopping-list --skipTests true
+  7. SHOPPING-EDIT
+    - ng g c shopping-list/shopping-edit --skipTests true
