@@ -19,6 +19,11 @@ export class ServerComponent {
     username = '';
     allowNewServer = false;
     serverCreationStatus = 'No server was created!';
+    content = 'Some content that can toggle';
+    visibleContent = false;
+    colorChanged = false;
+    numPushed = 0;
+    buttonPushArr = [];
 
     constructor() {
         setTimeout(() => {
@@ -49,4 +54,28 @@ export class ServerComponent {
         return this.serverStatus === 'online' ? 'green' : 'red';
     }
 
+    toggleContent() {
+        this.visibleContent = !this.visibleContent;
+        if(this.visibleContent === true) {
+            this.numPushed++;
+            this.buttonPushArr.push(this.numPushed);
+            if(this.numPushed === 5) {
+                this.colorChanged = true;
+            }
+        }
+        console.log(this.visibleContent);
+        console.log(this.numPushed);   
+    }
+
+    checkBackColor() {
+        if(this.colorChanged === true) {
+            return 'blue';
+        }
+    }
+
+    checkTextColor() {
+        if(this.colorChanged === true) {
+            return 'white';
+        }
+    }
  }

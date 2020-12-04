@@ -35,3 +35,15 @@
 <p [ngStyle]="getColor()"></p>
 
 <p *ngFor="let server of servers"></p>
+
+<button 
+  class="btn btn-primary"
+  (click)="toggleContent()"
+  >
+  Display Details
+</button>
+
+<div *ngIf="visibleContent">
+  <p>{{ content }}</p>
+  <p [ngStyle]="{backgroundColor: checkBackColor(), color: checkTextColor()}">{{ buttonPushArr }}</p>
+</div>
