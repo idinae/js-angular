@@ -1,0 +1,29 @@
+I. НАСТРОЙКА НА СРЕДАТА
+    - npm i -g @angular/cli <- освен ако не е инсталирано
+    - ng new new-app
+    - cd new-app
+    - npm i --save bootstrap@3 <- bootstrap v.3
+      : angular.json-architect-build-stypes: добавяме "node_modules/bootstrap/dist/css/bootstrap.min.css"
+    - ng s
+    - трием и тестваме app.component.html с bootstrap
+
+II. АНАЛИЗИРАМЕ АРХИТЕКТУРАТА
+    - какви компоненти ще са ни необходими, каква е връзката помежду им
+
+III. СЪЗДАВАНЕ НА КОМПОНЕНТИТЕ
+  1. HEADER
+    - папка header в app/ с файлове .ts (@Component със selector и templateUrl) и .html
+    - в app.module.ts:
+      : добавяме HeaderComponent в declarations
+      : импортваме го в началото с import { HeaderComponent } from "./...";
+  2. RECIPES
+    = компонент, който ще държи елемента, в него ще има details
+    - ng g c recipes --skipTests true <- за да не създава тестови файл
+  3. RECIPE-LIST
+    = в папката recipes
+    - ng g c recipes/recipe-list --skipTests true
+  4. RECIPE-DETAIL
+    - ng g c recipes/recipe-detail --skipTests true
+  5. RECIPE-ITEM
+    = в папката recipe-list
+    - ng g c recipes/recipe-list/recipe-item --skipTests true
