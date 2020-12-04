@@ -58,7 +58,7 @@ export class ServerComponent {
         this.visibleContent = !this.visibleContent;
         if(this.visibleContent === true) {
             this.numPushed++;
-            this.buttonPushArr.push(this.numPushed);
+            this.buttonPushArr.push(this.numPushed + ' - ' + new Date());
             if(this.numPushed === 5 && this.numPushed <= 10) {
                 this.colorChanged = true;
             }

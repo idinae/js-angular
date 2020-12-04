@@ -1,6 +1,4 @@
-<p 
-  [ngStyle]="{backgroundColor: getColor()}"
-  [ngClass]="{online: serverStatus === 'online'}">
+<p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: serverStatus === 'online'}">
   The {{'Server'}} with Id {{serverId}} is {{getServerStatus()}}
 </p>
 
@@ -12,10 +10,7 @@
 
 <p *ngFor="let server of servers">{{ serverName }}</p>
 
-<button 
-    class="btn btn-primary" 
-    [disabled]="!allowNewServer" 
-    (click)="onCreateServer()">Add Server</button>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 
 <!--<p [innerText]="allowNewServer"></p>-->
 <p>{{ serverCreationStatus }}</p>
@@ -24,26 +19,20 @@
 <label for="">Username</label>
 <input type="text" class="form-control" [(ngModel)]="username">
 <div *ngIf="username">
-<p>Hello, {{ username }}!</p>
+  <p>Hello, {{ username }}!</p>
 </div>
-<button 
-    class="btn btn-primary" 
-    [disabled]="username === ''"
-    (click)="onReset()"
-    >Reset User</button>
+<button class="btn btn-primary" [disabled]="username === ''" (click)="onReset()">Reset User</button>
 
 <p [ngStyle]="getColor()"></p>
 
 <p *ngFor="let server of servers"></p>
 
-<button 
-  class="btn btn-primary"
-  (click)="toggleContent()"
-  >
+<button class="btn btn-primary" (click)="toggleContent()">
   Display Details
 </button>
 
 <div *ngIf="visibleContent">
-  <p>{{ content }}</p>
-  <p [ngStyle]="{backgroundColor: checkBackColor(), color: checkTextColor()}">{{ buttonPushArr }}</p>
+  <div *ngFor="let contentItem of buttonPushArr">
+    <p [ngStyle]="{backgroundColor: checkBackColor(), color: checkTextColor()}">{{ contentItem }}</p>
+  </div>
 </div>
