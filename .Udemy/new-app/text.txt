@@ -31,3 +31,11 @@ III. СЪЗДАВАНЕ НА КОМПОНЕНТИТЕ
     - ng g c shopping-list --skipTests true
   7. SHOPPING-EDIT
     - ng g c shopping-list/shopping-edit --skipTests true
+
+IV. ПОДРЕЖДАМЕ КОМПОНЕНТИТЕ
+  1. В app.component.html слагаме селектора <app-recipes>, под него <app-shopping-list>
+  2. В recipes.component.html правим .row, .col-md-5, .col-md-7 <- две колони, съотв. за recipe-list и recipe-detail
+  3. В recipe-list.component.html слагаме recipe-item (само селектора)
+  4. В shopping-list.component.html слагаме .row, .col-xs-10 (широка колона) и в нея shopping-edit селектора
+
+
