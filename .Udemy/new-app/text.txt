@@ -50,4 +50,8 @@ V. ДОБАВЯМЕ СЪДЪРЖАНИЕ НА КОМПОНЕНТИТЕ
      : създаваме една рецепта в масива: new Recipe()
      : в recipe-list.component.html: *ngFor, {{ recipe.name }}, ...
   4. Recipe-detail
-     : recipe
+     : recipe-detail.component.html - правим го
+  5. Shopping-list
+     : правим html-а
+     : в ts-файла - добавяме ingredients = [];
+     : създаваме модел
