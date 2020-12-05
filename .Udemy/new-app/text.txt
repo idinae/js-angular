@@ -38,5 +38,10 @@ IV. ПОДРЕЖДАМЕ КОМПОНЕНТИТЕ
   3. В recipe-list.component.html слагаме recipe-item (само селектора)
   4. В shopping-list.component.html слагаме .row, .col-xs-10 (широка колона) и в нея shopping-edit селектора
 
-V. ЗАПЪЛВАМЕ КОМПОНЕНТИТЕ
-  1. В header.component.html 
+V. ДОБАВЯМЕ СЪДЪРЖАНИЕ НА КОМПОНЕНТИТЕ
+  1. В header.component.html добавяме меню и drop-down меню
+  2. Създаваме модел Recipe
+     = моделът е typescript файл, клас
+     = определя как ще изглежда отделната рецепта
+     : в recipe-list.component създаваме масив recipes = [];
+     : в папка recipes създаваме файл recipe.model.ts
