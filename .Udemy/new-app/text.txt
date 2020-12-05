@@ -41,17 +41,20 @@ IV. ПОДРЕЖДАМЕ КОМПОНЕНТИТЕ
 V. ДОБАВЯМЕ СЪДЪРЖАНИЕ НА КОМПОНЕНТИТЕ
   1. В header.component.html добавяме меню и drop-down меню
   2. Създаваме модел Recipe
-     = моделът е typescript файл, клас
-     = определя как ще изглежда отделната рецепта
+    = моделът е typescript файл, клас
+    = определя как ще изглежда отделната рецепта
   3. Recipe-list
-     : в recipe-list.component създаваме масив recipes = [];
-     : в папка recipes създаваме файл recipe.model.ts
-     : задаваме тип на масива resipes: recipes: Recipe[] = [], като импортваме модела
-     : създаваме една рецепта в масива: new Recipe()
-     : в recipe-list.component.html: *ngFor, {{ recipe.name }}, ...
+    - в recipe-list.component създаваме масив recipes = [];
+    - в папка recipes създаваме файл recipe.model.ts
+    - задаваме тип на масива resipes: recipes: Recipe[] = [], като импортваме модела
+    - създаваме една рецепта в масива: new Recipe()
+    - в recipe-list.component.html: *ngFor, {{ recipe.name }}, ...
   4. Recipe-detail
-     : recipe-detail.component.html - правим го
+    - recipe-detail.component.html - правим го
   5. Shopping-list
-     : правим html-а
-     : в ts-файла - добавяме ingredients = [];
-     : създаваме модел
+    - правим html-а
+    - в ts-файла - добавяме ingredients = [];
+  6. Ingredients модел
+    - създаваме папка app/shared и в нея ingredient.model.ts (съкратен вариант)
+    - в shopping-list.component.ts го импортваме и ползваме като тип на масива ingredients
+      : добавяме и нов Ingredient('')
