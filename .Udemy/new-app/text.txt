@@ -58,3 +58,5 @@ V. ДОБАВЯМЕ СЪДЪРЖАНИЕ НА КОМПОНЕНТИТЕ
     - създаваме папка app/shared и в нея ingredient.model.ts (съкратен вариант)
     - в shopping-list.component.ts го импортваме и ползваме като тип на масива ingredients
       : добавяме и нов Ingredient('')
+  7. Shopping-edit
+    - 
