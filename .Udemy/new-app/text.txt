@@ -59,4 +59,8 @@ V. ДОБАВЯМЕ СЪДЪРЖАНИЕ НА КОМПОНЕНТИТЕ
     - в shopping-list.component.ts го импортваме и ползваме като тип на масива ingredients
       : добавяме и нов Ingredient('')
   7. Shopping-edit
-    - 
+    - html
+
+VI. DEBUGGING
+  1. EXCEPTION: inline template:4:6 <- line, column, но не в нашите файлове
+  2. AUGURY - chrome extension
