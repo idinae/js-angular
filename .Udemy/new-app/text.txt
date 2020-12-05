@@ -43,8 +43,11 @@ V. ДОБАВЯМЕ СЪДЪРЖАНИЕ НА КОМПОНЕНТИТЕ
   2. Създаваме модел Recipe
      = моделът е typescript файл, клас
      = определя как ще изглежда отделната рецепта
+  3. Recipe-list
      : в recipe-list.component създаваме масив recipes = [];
      : в папка recipes създаваме файл recipe.model.ts
      : задаваме тип на масива resipes: recipes: Recipe[] = [], като импортваме модела
      : създаваме една рецепта в масива: new Recipe()
      : в recipe-list.component.html: *ngFor, {{ recipe.name }}, ...
+  4. Recipe-detail
+     : recipe
