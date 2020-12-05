@@ -38,4 +38,5 @@ IV. ПОДРЕЖДАМЕ КОМПОНЕНТИТЕ
   3. В recipe-list.component.html слагаме recipe-item (само селектора)
   4. В shopping-list.component.html слагаме .row, .col-xs-10 (широка колона) и в нея shopping-edit селектора
 
-
+V. ЗАПЪЛВАМЕ КОМПОНЕНТИТЕ
+  1. В header.component.html 
