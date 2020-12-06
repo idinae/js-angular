@@ -3,7 +3,7 @@ I. НАСТРОЙКА НА СРЕДАТА
     - ng new new-app
     - cd new-app
     - npm i --save bootstrap@3 <- bootstrap v.3
-      : angular.json-architect-build-stypes: добавяме "node_modules/bootstrap/dist/css/bootstrap.min.css"
+      : в angular.json-architect-build-styles: добавяме "node_modules/bootstrap/dist/css/bootstrap.min.css"
     - ng s
     - трием и тестваме app.component.html с bootstrap
 
