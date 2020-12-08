@@ -64,3 +64,13 @@ V. ДОБАВЯМЕ СЪДЪРЖАНИЕ НА КОМПОНЕНТИТЕ
 VI. DEBUGGING
   1. EXCEPTION: inline template:4:6 <- line, column, но не в нашите файлове
   2. AUGURY - chrome extension
+
+V. DATA BINDING
+! Всички пропъртита се виждат само в рамките на компонентата
+! Ако искаме да ги достъпваме отвън, трябва да добавим декоратор към пропъртито 
+  -> слагаме @Input() преди декларацията на пропъртито, трябва да го импортнем от @angular/core
+  = така може да се достъпва от всеки html компонент, в който има селектор към това пропърти
+! Ако искаме да достъпим метод отвън (от app.component.ts напр.) - правим нов метод, който да слуша, напр. (serverCreated)="onServerAdded($event)", който слагаме при селектора
+  -> този метод, който слуша, се декларира в компонентата, от която идва, напр. @Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();, което се импортва от @angular/core
+! EventEmitter<{}>() е обект в angular framework, който ни позволява да емитваме собствени събития (to emit your own events)
+  -> в компонентата, от която идва, имаме функция onAddServer() {this.serverCreated.emit({serverName: this.newServerName, serverContent: this.newServerContent});} <- емитва събитието
