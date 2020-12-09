@@ -75,10 +75,20 @@ V. DATA BINDING
 ! EventEmitter<{}>() е обект в angular framework, който ни позволява да емитваме собствени събития (to emit your own events)
   -> в компонентата, от която идва, имаме функция onAddServer() {this.serverCreated.emit({serverName: this.newServerName, serverContent: this.newServerContent});} <- емитва събитието
 
-VI. VIEW ENCAPSULATION
+  1. VIEW ENCAPSULATION
   -> в декоратора на ts-файла добавяме encapsulation: ViewEncapsulation.none (Emulated е дефолт, т.е има, ShadowDom e същото, но само в браузърите, които имат) -> даденият елемент не ползва вече енкапсулация и ако се добави стил в него - прилага се глобално!
 
-VII. LOCAL REFERENCE
+  2. LOCAL REFERENCE
 ! може да се слага върху всеки елемент: #serverNameInput 
   - това е референция към целия html елемент; ползва се вместо two-way binding
   - може да се използват навсякъде в приложението, но само в html-ите
+
+  3. ViewChild
+  ! @ViewChild('serverContentInput', {static: true}) serverContentInput: ElementRef;
+    -> добавя се втори аргумент на ф-цията {static: true} САМО ако смятаме да достъпваме елемента в ngOnInit()
+    = начин да получим достъп до всеки елемент директно от ts кода преди да извикаме метода:
+      : @ViewChild('serverContentInput') serverContentInput: ElementRef <- в ts файла
+      : стойността на serverContentInput се достъпва: this.serverContentInput.nativeElement.value;
+
+! Т.е. locar references могат да се подават на методи или могад да се fetch-ват от @ViewChild
+! Не бива да се променят DOM елементите по този начин, въпреки че може!
