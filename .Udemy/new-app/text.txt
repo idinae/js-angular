@@ -74,3 +74,11 @@ V. DATA BINDING
   -> този метод, който слуша, се декларира в компонентата, от която идва, напр. @Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();, което се импортва от @angular/core
 ! EventEmitter<{}>() е обект в angular framework, който ни позволява да емитваме собствени събития (to emit your own events)
   -> в компонентата, от която идва, имаме функция onAddServer() {this.serverCreated.emit({serverName: this.newServerName, serverContent: this.newServerContent});} <- емитва събитието
+
+VI. VIEW ENCAPSULATION
+  -> в декоратора на ts-файла добавяме encapsulation: ViewEncapsulation.none (Emulated е дефолт, т.е има, ShadowDom e същото, но само в браузърите, които имат) -> даденият елемент не ползва вече енкапсулация и ако се добави стил в него - прилага се глобално!
+
+VII. LOCAL REFERENCE
+! може да се слага върху всеки елемент: #serverNameInput 
+  - това е референция към целия html елемент; ползва се вместо two-way binding
+  - може да се използват навсякъде в приложението, но само в html-ите
