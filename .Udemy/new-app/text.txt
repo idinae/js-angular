@@ -89,6 +89,7 @@ V. DATA BINDING
     = начин да получим достъп до всеки елемент директно от ts кода преди да извикаме метода:
       : @ViewChild('serverContentInput') serverContentInput: ElementRef <- в ts файла
       : стойността на serverContentInput се достъпва: this.serverContentInput.nativeElement.value;
+    - @ContentChild('')
 
 ! Т.е. locar references могат да се подават на методи или могад да се fetch-ват от @ViewChild
 ! Не бива да се променят DOM елементите по този начин, въпреки че може!
@@ -104,4 +105,4 @@ VI. LIFE CYCLE HOOKS
   6. ngAfterViewInit - after view has been initialized
   7. ngAfterViewChecked - after view has been checked
   8. ngOnDestroy - once the comp is about to be destroyed
-  
+
