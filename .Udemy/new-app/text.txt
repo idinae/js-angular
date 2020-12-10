@@ -92,3 +92,16 @@ V. DATA BINDING
 
 ! Т.е. locar references могат да се подават на методи или могад да се fetch-ват от @ViewChild
 ! Не бива да се променят DOM елементите по този начин, въпреки че може!
+
+  4. NG директива <ng-content> - чрез този селектор се маркира мястото в компонентата, където ще се слага текст; а html кода за текста се поставя в app.component.html - между отварящата и затварящата скоба на селектора на компонентата
+
+VI. LIFE CYCLE HOOKS
+  1. ngOnChanges - called after a bound input property changes
+  2. ngOnInit - called once the comp is initialized, after the constructor
+  3. ngDoCheck - executed a lot of times: during every change detection run - checks if something changed
+  4. ngAfterContentInit - called after content has been projected into view
+  5. ngAfterContentChecked - after content has been checked
+  6. ngAfterViewInit - after view has been initialized
+  7. ngAfterViewChecked - after view has been checked
+  8. ngOnDestroy - once the comp is about to be destroyed
+  
