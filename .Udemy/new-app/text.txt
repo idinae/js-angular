@@ -106,3 +106,7 @@ VI. LIFE CYCLE HOOKS
   7. ngAfterViewChecked - after view has been checked
   8. ngOnDestroy - once the comp is about to be destroyed
 
+VII. ЗАРЕЖДАНЕ В APP COMP НА ОПРЕДЕЛЕНО СЪДЪРЖАНИЕ
+  1. Добавяне в html-файл на (click)="" event с ф-ция onSelect('')
+  2. Дефиниране на ф-цията onSelect('') в ts-файла; тук емитваме нов event - вж файла
+  
