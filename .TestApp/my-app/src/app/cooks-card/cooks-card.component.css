@@ -66,3 +66,9 @@ a:hover {
 	padding-right: 0px;
 	border-radius: 5px;
 }
+
+/* CONTAINER */
+.container {
+	width: 1200px;
+	margin: 0px auto;
+}

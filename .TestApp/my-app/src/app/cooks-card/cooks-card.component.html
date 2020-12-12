@@ -5,7 +5,10 @@
       <h3>{{ cook.name }}</h3>
       <p>{{ cook.description }}
       </p>
-      <a href="/details/{{cook.id}}" class="button-style">Детайли</a>
+      <a 
+      href="/details/{{cook.id}}" 
+      class="button-style" 
+      (click)="onSelected(cook)">Детайли</a>
     </div>
   </div>
 </div>

@@ -3,9 +3,14 @@
     <h2>Топ 3 рецепти</h2>
   </header>
 
-<div class="row">
-  <div *ngFor="let cook of cooks" class="col-sm-4">
-    <app-cooks-card [cook]="cook"></app-cooks-card>
+  <div class="row">
+    <div *ngFor="let cook of cooks" class="col-sm-4">
+      <app-cooks-card [cook]="cook" (recipeSelected)="selectedRecipe = $event"></app-cooks-card>
+    </div>
+
+    <div  *ngIf="selectedRecipe">{{selectedRecipe.id}}</div>
+    
   </div>
-</div>
+
+
 </div>

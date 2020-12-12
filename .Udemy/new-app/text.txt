@@ -110,3 +110,5 @@ VII. ЗАРЕЖДАНЕ В APP COMP НА ОПРЕДЕЛЕНО СЪДЪРЖАНИ
   1. Добавяне в html-файл на (click)="" event с ф-ция onSelect('')
   2. Дефиниране на ф-цията onSelect('') в ts-файла; тук емитваме нов event - вж файла
   
+VIII. ЗАРЕЖДАНЕ НА ДЕТАЙЛИ
+  1. html на елемента recipes-item -> (click)="onSelected" -> .ts new EventEmitter<void>()
