@@ -23,6 +23,17 @@
 	color: #FFF !important;
 }
 
+a:hover {
+	background-color: rgb(184, 113, 46);
+	text-decoration: none;
+	  cursor: pointer;
+  }
+  
+  a:active {
+	  background-color: rgb(184, 113, 46);
+	  cursor: pointer;
+  }
+
 /* THUMBNAIL */
 .thumbnail {
 	min-height: 380px;

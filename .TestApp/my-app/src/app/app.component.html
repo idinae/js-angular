@@ -1,45 +1,16 @@
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cook Book</title>
-</head>
-
-<body>
+<app-header (featureSelected)="onNavigate($event)"></app-header>
 
 
-  <div id="header" class="container">
-    <div id="logo">
-      <h1><a href="#"><span>Cook</span>Book</a></h1>
-    </div>
-    <div id="menu">
-      <ul>
-
-        <li class="active"><a href="/" accesskey="1" title="">Homepage</a></li>
-        <li><a href="/login" accesskey="3" title="">Login</a></li>
-        <li><a href="/register" accesskey="2" title="">Register</a></li>
-
-      </ul>
-    </div>
-  </div>
+<div id="banner" class="container"> <img src="../assets/images/img1.jpg" width="1180" height="393" alt="" />
+</div>
+<main>
+    <app-login *ngIf="loadedFeature === 'login'"></app-login>
+    <app-register *ngIf="loadedFeature === 'register'"></app-register>
+    <app-cooks *ngIf="loadedFeature !== 'login' && loadedFeature !== 'register'"></app-cooks>
+</main>
+<app-footer></app-footer>
 
 
-
-
-
-  <div id="banner" class="container"> <img src="../assets/images/img1.jpg" width="1180" height="393" alt="" />
-  </div>
-
-
-
-  <main>
-      <app-cooks></app-cooks>
-  </main>
-
-</body>
-
-</html>
 
 <!--
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -162,8 +133,3 @@
 	</div>
 
 	-->
-
-  <div id="footer" class="container">
-    <p>&copy; Design by <a href="" rel="nofollow">idinae</a>. Photos by <a href="http://subektiv.com/">emmmo</a>.</p>
-  </div>
-
