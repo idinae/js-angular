@@ -6,13 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 
-import { BasciHighlightDirective } from './basic-highlight/basic-highlight.directive';
-
 @NgModule({
   declarations: [
     AppComponent,
-    ServerComponent,
-    BasciHighlightDirective
+    ServerComponent
   ],
   imports: [
     BrowserModule,
