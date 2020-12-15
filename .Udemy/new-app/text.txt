@@ -112,3 +112,34 @@ VII. ЗАРЕЖДАНЕ В APP COMP НА ОПРЕДЕЛЕНО СЪДЪРЖАНИ
   
 VIII. ЗАРЕЖДАНЕ НА ДЕТАЙЛИ
   1. html на елемента recipes-item -> (click)="onSelected" -> .ts new EventEmitter<void>()
+
+IX. ФОРМИ
+  -> взимаме съдържанието, въведено във input на формата:
+  1. В app.module, imports: FromModule & import { FormsModule } from '@angular/forms';
+  2. .html form -> reference #nameInput, button -> (click)="onAddItem()"
+  3. .ts -> @ViewChild('nameInput', { static: false }) nameInputRef: ElementRef; //ViewChild и ElementRef се импортват от '@angular/core'
+  4. .ts -> event emitter от тип обект {} или направо модела, ако сме дефинирали типа: @Output() ingredientAdded = new EventEmitter<{name: string, amount: number}>() или <Ingredient>;
+  5. Дефинираме ф-цията onAddItem() 
+     - да създава нова инстанция на клас Ingredient с аргументи стойностите от полетата
+     - да емитва обект с тези стойности: this.ingredientAdded.emit(newIngredient);
+  6. В компонентата shopping-list, която имплементира компонентата shopping-edit, вече можем да използваме евента (ingredientAdded)
+     - Създаваме (ingredientAdded)="onIngredientAdded($event)"
+     - декларираме onIngredientAdded() в .ts-файла, като подаваме аргумент на параметъра ingredient: Ingredient
+     - пушваме в масива ingredients новия обект -> this.ingredients.push(ingredient);
+
+X. DIRECTIVES
+  = 2 types:
+    1/ Attribute directives: [ngStyle], [ngClass]
+      - look like a normal HTML attrubute (possibly with databinding or event binding)
+      - only affect/change the element they are added to
+      ex.: [ngClass]="{odd: odd % 2 !== 0}"
+           [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'yellow' : 'transparent'}"
+    2/ Structural directives: *ngFor, *ngIf
+      - look like a normal HTML attrubute but have a leading *
+      - affect a whole area in the DOM -> elements get added / removed
+      ex.: *ngFor="let number of numbers"... {{ number }}
+  1. Създаваме нова директива:
+      - нова папка app/basic-highligth, нов файл basic-highlight.directive.ts
+      - създаваме декоратор @Directive({}), импортваме Directive от @ang/core, експортваме класа
+      - в декоратора е задължителен уникален селектор: selector: '[appBasicHighlight]';
+      - добавяме конструктор с параметрите, които ще приема всяка инстанция на класа

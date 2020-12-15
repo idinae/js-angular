@@ -6,7 +6,8 @@
 <main>
     <app-login *ngIf="loadedFeature === 'login'"></app-login>
     <app-register *ngIf="loadedFeature === 'register'"></app-register>
-    <app-cooks *ngIf="loadedFeature !== 'login' && loadedFeature !== 'register'"></app-cooks>
+    <app-create *ngIf="loadedFeature === 'create'"></app-create>
+    <app-cooks *ngIf="loadedFeature !== 'login' && loadedFeature !== 'register' && loadedFeature !== 'create'"></app-cooks>
 </main>
 <app-footer></app-footer>
 
