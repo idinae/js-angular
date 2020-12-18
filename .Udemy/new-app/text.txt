@@ -173,4 +173,10 @@ X. DIRECTIVES
       - използваме this.defaultColor и this.highlightColor
   7. Own structural directive
       - ng g d unless -> will attach smt if the condition is false
-      - 
+      - @Input() set appUnless(condition: boolean) {} <- ключовата дума set превръща unless() в метод
+      - в конструктора приема аргументите: (private templateRef: TemplateRef<any>, private vcRef: ViewContainerRef)
+      - TemplateRef<any> - дава ни достъп до темплейта (template is injected), но трябва да се импортне, generic type; templateRef - просто името <-- тук казваме какво искаме да сложим
+      - във втората част - vcRef <-- тук казваме къде в документа искаме да сложим директивата
+      - createEmbeddedView() - създава view в контейнера
+      - директивата се импортва в app.module.ts и се добавя в declarations
+      - после на мястото на *ngIf можем да ползваме *appUnless - с обратната проверка
