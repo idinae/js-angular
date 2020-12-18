@@ -150,8 +150,27 @@ X. DIRECTIVES
     Но: не е добра практика директно да се достъпват елементи (понякога в сервизи не работим с DOM дърво)
   3. Директива с използване на Renderer 
      = по-добрият начин да достъпваме DOM
+     = Renderer2 methods вж. https://angular.io/api/core/Renderer2
       - ng g d better-highlight - може и в самостоятелна папка или отделна папка directives
       - добавяме private параментър от тип Renderer2
       - имплементираме OnInit, защото е добра практика да се инициализира
       - в OnInit сетваме стила: setStyle(), който приема 3 аргумента: елемент, пропърти на стила, стойност
       - инжектираме през друго private пропърти в конструктора референция към елемента, на който ще сетваме стил
+  4. Декоратор @HostListener 
+     = поставяне на събитие върху елемента, върху който стои директивата
+     = може да реагира на всякакви събития
+      - в класа на директивата се слага @HostListener('mouseenter') mouseover(eventData: Event) {} 
+        <- върху метода, който ще се изпълнява
+        <- аргумента на @HostListener('mouseenter') mouseenter е събитие, което се поддържа от DOM елемента, върху който стои събитието
+      вж. better-highlight.directive.ts
+  5. Декоратор @HostBinding
+      - @HostBinding('style.backgroundColor') backgroundColor: string = 'transparent'; <- като аргумент се подава пропъртито, което ще се манипулира, задаваме и начална стойност
+      - поставяме го в HostListener-a и задаваме value: this.backgroundColor = 'blue';
+  6. Custom property binding
+      - добавяме 2 пропъртита, към които можем се bind-ваме отвън:
+          @Input() defaultColof: string = 'transparent';
+          @Input() highlightColor: string = 'blue';
+      - използваме this.defaultColor и this.highlightColor
+  7. Own structural directive
+      - ng g d unless -> will attach smt if the condition is false
+      - 
