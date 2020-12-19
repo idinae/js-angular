@@ -168,7 +168,7 @@ X. DIRECTIVES
       - поставяме го в HostListener-a и задаваме value: this.backgroundColor = 'blue';
   6. Custom property binding
       - добавяме 2 пропъртита, към които можем се bind-ваме отвън:
-          @Input() defaultColof: string = 'transparent';
+          @Input() defaultColor: string = 'transparent';
           @Input() highlightColor: string = 'blue';
       - използваме this.defaultColor и this.highlightColor
   7. Own structural directive
@@ -198,4 +198,10 @@ X. DIRECTIVES
         -> бихме могли да направим да се затваря с клик където и да е в документа -> слагаме listener-а върху документа
 
 XI. SERVICES AND DEPENDANCY INJECTION
-    
+  1. Building a service for logging
+      - създаваме файл src/loggin.service.ts, който експортва клас LogginService
+      - добавяме метод logStatusChange(status: string) {console.log('New status: ' + status);}
+      - създаване нова инстанция на класа - но това не е правилният начин!
+  2. Use a service by dependancy injection - the right way!
+      - we only need to inform angular that we require such injection
+      - 
