@@ -180,3 +180,22 @@ X. DIRECTIVES
       - createEmbeddedView() - създава view в контейнера
       - директивата се импортва в app.module.ts и се добавя в declarations
       - после на мястото на *ngIf можем да ползваме *appUnless - с обратната проверка
+  8. ngSwitch - covers a couple of cases
+      - <div [ngSwitch]="value">
+          <p *ngSwitchCase="5">Value is 5</p>
+          <p *ngSwitchCase="10">Value is 10</p>
+          <p *ngSwitchCase="20">Value is 20</p>
+          <p *ngSwitchDefault>Value is Default</p>
+  9. Създаване на директива, която манипулира бутончето на падащото меню
+      - ng g d shared/dropdown --skipTests true
+      - да добавим клас, който се ползва при кликване на бутона и се изтрива в обратния случай -> open <- в <div class="btn-group open"> на recipe-detail.component.html
+        -> слушаме за клик - добавяме @HostListener('click') toggleOpen() {this.isOpen = !this.isOpen;}
+        -> добавяме @HostBinding() <- позвалява ни да се свържем към пропъртита на елемента, върху който е сложена директивата
+      - добавяме директивата в app.module.ts: declarations, import
+      - вече можем да я използваме:
+        -> в recipe-detail.component.html добавяме селектора appDropdown
+        -> в header.component.html също добавяме селектора appDropdown
+        -> бихме могли да направим да се затваря с клик където и да е в документа -> слагаме listener-а върху документа
+
+XI. SERVICES AND DEPENDANCY INJECTION
+    
