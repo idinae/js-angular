@@ -203,5 +203,9 @@ XI. SERVICES AND DEPENDANCY INJECTION
       - добавяме метод logStatusChange(status: string) {console.log('New status: ' + status);}
       - създаване нова инстанция на класа - но това не е правилният начин!
   2. Use a service by dependancy injection - the right way!
-      - we only need to inform angular that we require such injection
-      - 
+    = dependancy injector injects an instance of the class into our component automatically
+      - we only need to inform angular that we require such instance
+        -> add a constructor to the comp where we want to use the service:
+            constructor(private loggingService: LoggingService) {}
+        -> add an extra property to the @Component decorator: providers: [LoggingService]
+        -> this.loggingService.logStatusChange(accountStatus);

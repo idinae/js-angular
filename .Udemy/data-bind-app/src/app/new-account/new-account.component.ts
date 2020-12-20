@@ -1,13 +1,17 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { LoggingService } from '../logging.service';
 // import { LoggingService } from '../logging.service';
 
 @Component({
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
-  styleUrls: ['./new-account.component.css']
+  styleUrls: ['./new-account.component.css'],
+  providers: [LoggingService]
 })
 export class NewAccountComponent {
   @Output() accountAdded = new EventEmitter<{ name: string, status: string }>();
+
+  constructor(private loggingService: LoggingService) {}
 
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accountAdded.emit({
@@ -16,5 +20,6 @@ export class NewAccountComponent {
     });
     // const service = new LoggingService(); //wrongly to instantiate a new service this way
     // service.logStatusChange(accountStatus);
+    this.loggingService.logStatusChange(accountStatus);
   }
 }
