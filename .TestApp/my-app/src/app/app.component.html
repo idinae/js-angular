@@ -8,6 +8,7 @@
     <app-register *ngIf="loadedFeature === 'register'"></app-register>
     <app-create *ngIf="loadedFeature === 'create'"></app-create>
     <app-cooks *ngIf="loadedFeature !== 'login' && loadedFeature !== 'register' && loadedFeature !== 'create'"></app-cooks>
+    <app-details *ngIf="selectedRecipe" [cook]="selectedRecipe"></app-details>
 </main>
 <app-footer></app-footer>
 

@@ -5,12 +5,7 @@
 
   <div class="row">
     <div *ngFor="let cook of cooks" class="col-sm-4">
-      <app-cooks-card [cook]="cook" (recipeSelected)="selectedRecipe = $event"></app-cooks-card>
-    </div>
-
-    <div  *ngIf="selectedRecipe">{{selectedRecipe.id}}</div>
-    
+      <app-cooks-card [cook]="cook"></app-cooks-card>
+    </div>   
   </div>
-
-
 </div>

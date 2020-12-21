@@ -9,7 +9,6 @@ import { RecipeService } from '../recipe.service';
   styleUrls: ['./cooks.component.css']
 })
 export class CooksComponent implements OnInit {
-  selectedRecipe: Recipe;
   cooks: Recipe[];
 
   constructor(private recipeService: RecipeService) {}
@@ -17,6 +16,5 @@ export class CooksComponent implements OnInit {
   ngOnInit(): void {
     this.cooks = this.recipeService.getRecipes();
   }
-
 
 }
