@@ -4,11 +4,11 @@ import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
 
 @Component({
-  selector: 'app-cooks',
-  templateUrl: './cooks.component.html',
-  styleUrls: ['./cooks.component.css']
+  selector: 'app-cooks-list',
+  templateUrl: './cooks-list.component.html',
+  styleUrls: ['./cooks-list.component.css']
 })
-export class CooksComponent implements OnInit {
+export class CooksListComponent implements OnInit {
   cooks: Recipe[];
 
   constructor(private recipeService: RecipeService) {}
@@ -16,5 +16,4 @@ export class CooksComponent implements OnInit {
   ngOnInit(): void {
     this.cooks = this.recipeService.getRecipes();
   }
-
 }

@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+      <div class="btn-group" appDropdown>
+        <button type="button" class="btn btn-primary dropdown-toggle" id="button-list">
+          Recipe Type<span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Main</a></li>
+          <li><a href="#">Salads</a></li>
+          <li><a href="#">Desserts</a></li>
+        </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let cook of cooks" class="col-sm-4">
+      <app-cooks-card [cook]="cook"></app-cooks-card>
+    </div>
+  </div>
+</div>

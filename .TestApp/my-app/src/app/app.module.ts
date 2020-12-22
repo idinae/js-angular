@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CooksComponent } from './cooks/cooks.component';
@@ -10,6 +11,8 @@ import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { DetailsComponent } from './details/details.component';
 import { CreateComponent } from './create/create.component';
+import { CooksListComponent } from './cooks-list/cooks-list.component';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -21,10 +24,13 @@ import { CreateComponent } from './create/create.component';
     LoginComponent,
     RegisterComponent,
     DetailsComponent,
-    CreateComponent
+    CreateComponent,
+    CooksListComponent,
+    DropdownDirective,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
