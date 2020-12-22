@@ -222,4 +222,5 @@ XI. SERVICES AND DEPENDANCY INJECTION
     - event emitter in a component
     - subscibe() to the event in another component, in the constructor -> this.accountService.statusUpdated.subscribe()
   6. Практика на сървисите
-    - решаваме какви сървиси са нужни и намираме подходящо място в проекта - напр. в папката на съответен компонент 
+    - решаваме какви сървиси са нужни и намираме подходящо място в проекта - напр. в папката на съответен компонент
+    - ако даден сървис се използва от повече компоненти - слага се в app.module.ts
