@@ -224,3 +224,13 @@ XI. SERVICES AND DEPENDANCY INJECTION
   6. Практика на сървисите
     - решаваме какви сървиси са нужни и намираме подходящо място в проекта - напр. в папката на съответен компонент
     - ако даден сървис се използва от повече компоненти - слага се в app.module.ts
+
+XII. ROUTING
+  1. Създаване на рутиране
+    - в app.module.ts създаваме const appRoutes: Routes = [{}]; импортва се от @angular/router
+    - в масива се слага обект с конфигурациите: path: 'users',  component: UsersComponent
+    - в app.module.ts, imports добавяме RouterModule.forRoot(appRoutes), който също се импортва от @angular/router; като аргумент получава const appRoutes
+    - в app.component.html на мястото на селекторите добавяме <router-outlet></router-outlet>, което е директива
+    -> 1-ви вар.: в a href на app.component.html слагаме адресите към страниците: a href="/", a href="/users"...
+    -> 2-ри вар.: с routerLink="" или [routerLink]="['/users']" <- по-добрият начин, защото не презарежда страницата!!!
+    
