@@ -232,5 +232,13 @@ XII. ROUTING
     - в app.module.ts, imports добавяме RouterModule.forRoot(appRoutes), който също се импортва от @angular/router; като аргумент получава const appRoutes
     - в app.component.html на мястото на селекторите добавяме <router-outlet></router-outlet>, което е директива
     -> 1-ви вар.: в a href на app.component.html слагаме адресите към страниците: a href="/", a href="/users"...
-    -> 2-ри вар.: с routerLink="" или [routerLink]="['/users']" <- по-добрият начин, защото не презарежда страницата!!!
-    
+    -> 2-ри вар.: с routerLink="/users" или [routerLink]="['/users']" <- по-добрият начин, защото не презарежда страницата!!! или  routerLink="users", ако са елементи на root-компонентата; за nested parts винаги се слага /
+    - активният таб да се сетва динамично: вместо css class="active" ползваме routerLinkActive="" <- може в li, може и в routerLink (с bootstrap работи 1-ят вар.)
+      ! за да не е active home винаги, трябва да добавим конфигурация: [routerLinkActiveOptions]="{exact: true}"
+
+  2. Programatically route to some page
+    = можем да инжектираме рутер в някой от компонентите - напр. home.component.ts
+      -> import, constructor, this.router.navigate([])...
+      -> without a slash ("/") it turns to a relative component
+      -> ActivatedRoute injects the currently active route
+          this.router.navigate(['servers'], {relativeTo: this.route}); <- relativeTo - resolves relative routes
