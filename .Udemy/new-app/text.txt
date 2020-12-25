@@ -235,10 +235,14 @@ XII. ROUTING
     -> 2-ри вар.: с routerLink="/users" или [routerLink]="['/users']" <- по-добрият начин, защото не презарежда страницата!!! или  routerLink="users", ако са елементи на root-компонентата; за nested parts винаги се слага /
     - активният таб да се сетва динамично: вместо css class="active" ползваме routerLinkActive="" <- може в li, може и в routerLink (с bootstrap работи 1-ят вар.)
       ! за да не е active home винаги, трябва да добавим конфигурация: [routerLinkActiveOptions]="{exact: true}"
-
   2. Programatically route to some page
     = можем да инжектираме рутер в някой от компонентите - напр. home.component.ts
       -> import, constructor, this.router.navigate([])...
       -> without a slash ("/") it turns to a relative component
       -> ActivatedRoute injects the currently active route
           this.router.navigate(['servers'], {relativeTo: this.route}); <- relativeTo - resolves relative routes
+  3. Passing parameters to routes
+    - app.module.ts, path: {path: 'users/:id', component: UserComponent} - :id is a dynamic piece; за да можем да взимаме името, добавяме и него: users/:id/:name
+    - user.component.ts: constructor(private route: ActivatedRoute) {} <- the ActivatedRoute object we injected will give us access to the id passed in the URL => Selected User
+    - в ngOnInit: this.user = {id: this.route.snapshot.params['id'], name: ...}
+    - в user.component.html: user with id {{ user.id }} loaded
