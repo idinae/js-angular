@@ -246,3 +246,7 @@ XII. ROUTING
     - user.component.ts: constructor(private route: ActivatedRoute) {} <- the ActivatedRoute object we injected will give us access to the id passed in the URL => Selected User
     - в ngOnInit: this.user = {id: this.route.snapshot.params['id'], name: ...}
     - в user.component.html: user with id {{ user.id }} loaded
+    - в user.component.html: <a [routerLink]="['/users', 10, 'Anna']"></a> <- loads link /users/10/Anna
+  ! Observable: 
+    = a feature which allows you easy to work with asynchronous task;
+    = an easy way to subscribe to some event which might happen and then execute some code
