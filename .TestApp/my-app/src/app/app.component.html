@@ -1,10 +1,12 @@
 <app-header (featureSelected)="onNavigate($event)"></app-header>
 <main>
-    <app-login *ngIf="loadedFeature === 'login'"></app-login>
+    <!-- <app-login *ngIf="loadedFeature === 'login'"></app-login>
     <app-register *ngIf="loadedFeature === 'register'"></app-register>
     <app-create *ngIf="loadedFeature === 'create'"></app-create>
     <app-cooks *ngIf="loadedFeature !== 'login' && loadedFeature !== 'register' && loadedFeature !== 'create'"></app-cooks>
-    <app-details *ngIf="selectedRecipe" [cook]="selectedRecipe"></app-details>
+    <app-details *ngIf="selectedRecipe" [cook]="selectedRecipe"></app-details> -->
+    <router-outlet></router-outlet>
+
 </main>
 <app-footer></app-footer>
 

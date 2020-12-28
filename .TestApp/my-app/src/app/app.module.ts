@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CooksComponent } from './cooks/cooks.component';
@@ -13,6 +14,14 @@ import { DetailsComponent } from './details/details.component';
 import { CreateComponent } from './create/create.component';
 import { CooksListComponent } from './cooks-list/cooks-list.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+
+const appRoutes: Routes = [
+  {path: '', component: CooksListComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'create', component: CreateComponent},
+  {path: 'details/:id', component: DetailsComponent}
+]
 
 @NgModule({
   declarations: [
@@ -30,7 +39,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

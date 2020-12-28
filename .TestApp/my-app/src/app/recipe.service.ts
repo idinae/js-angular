@@ -13,4 +13,9 @@ export class RecipeService {
   getRecipes() {
     return this.cooks.slice();
   }
+
+  getRecipe(cookId) {
+    return this.cooks.filter(cook => +cook.id === +cookId).slice();
+  }
+
 }
