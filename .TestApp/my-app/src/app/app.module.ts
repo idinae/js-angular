@@ -16,7 +16,7 @@ import { CooksListComponent } from './cooks-list/cooks-list.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 
 const appRoutes: Routes = [
-  {path: '', component: CooksListComponent},
+  {path: '', component: CooksComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'create', component: CreateComponent},
