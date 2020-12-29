@@ -250,3 +250,9 @@ XII. ROUTING
   ! Observable: 
     = a feature which allows you easy to work with asynchronous task;
     = an easy way to subscribe to some event which might happen and then execute some code
+  4. Redirecting and wildcard routes
+    - add a new component: ng g c page-not-found
+    - app.module.ts: 
+      -> {path: 'not-found', component: PageNotFoundComponent}
+      -> {path: '**', redirectTo: '/not-found'} //at the last of all paths!!!
+      

@@ -15,6 +15,7 @@ import { CreateComponent } from './create/create.component';
 import { CooksListComponent } from './cooks-list/cooks-list.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { EditComponent } from './edit/edit.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   {path: '', component: CooksComponent},
@@ -22,7 +23,9 @@ const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'create', component: CreateComponent},
   {path: 'details/:id', component: DetailsComponent},
-  {path: 'details/:id/edit', component: EditComponent}
+  {path: 'details/:id/edit', component: EditComponent},
+  {path: 'not-found', component: PageNotFoundComponent},
+  {path: '**', redirectTo: '/not-found'}
 ]
 
 @NgModule({
@@ -39,6 +42,7 @@ const appRoutes: Routes = [
     CooksListComponent,
     DropdownDirective,
     EditComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
