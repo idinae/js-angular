@@ -14,13 +14,15 @@ import { DetailsComponent } from './details/details.component';
 import { CreateComponent } from './create/create.component';
 import { CooksListComponent } from './cooks-list/cooks-list.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { EditComponent } from './edit/edit.component';
 
 const appRoutes: Routes = [
   {path: '', component: CooksComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'create', component: CreateComponent},
-  {path: 'details/:id', component: DetailsComponent}
+  {path: 'details/:id', component: DetailsComponent},
+  {path: 'details/:id/edit', component: EditComponent}
 ]
 
 @NgModule({
@@ -36,6 +38,7 @@ const appRoutes: Routes = [
     CreateComponent,
     CooksListComponent,
     DropdownDirective,
+    EditComponent,
   ],
   imports: [
     BrowserModule,

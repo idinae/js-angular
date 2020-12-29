@@ -14,8 +14,17 @@ export class RecipeService {
     return this.cooks.slice();
   }
 
-  getRecipe(cookId) {
-    return this.cooks.filter(cook => +cook.id === +cookId).slice();
+  getRecipe(cookId: string) {
+    return this.cooks.filter(cook => +cook.id === +cookId);
+  }
+
+  updateRecipe(cookId: string, name: string, description: string, imageUrl: string) {
+    const cook = this.cooks.filter((c) => { return +c.id === +cookId });
+    if (cook[0]) {
+      cook[0].name = name;
+      cook[0].description = description;
+      cook[0].imageUrl = imageUrl;
+    }
   }
 
 }
