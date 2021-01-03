@@ -269,8 +269,10 @@ XII. ROUTING
       2nd approach: allows you to react to queryParams changes
           this.route.queryParams.subscribe();
           this.route.fragment.subscribe();
-
-
+  6. Nested routing
+    = child comp load inside the parent comp and not in separate pages
+    - app.module.ts: 3rd param in routes: children: [...] <- child routes are inside w/o the name of the parent route
+    - in servers.component.html instead of child comp selectors: <router-outlet></router-outlet>
   
   6. Redirecting and wildcard routes
     - add a new component: ng g c page-not-found
