@@ -250,7 +250,29 @@ XII. ROUTING
   ! Observable: 
     = a feature which allows you easy to work with asynchronous task;
     = an easy way to subscribe to some event which might happen and then execute some code
-  4. Redirecting and wildcard routes
+  4. Passing query parameters and fragments
+    ex.: localhost:4200/users/10/Anna?mode=editing#loading
+    - в app.module.ts: {path: 'servers/:id/edit', component: EditServerComponent}
+    - в servers.component.html: 
+        [routerLink]="['/servers', 5, 'edit']"
+        [queryParams]="{allowEdit: '1'}" <- it is a bindable property of the routerLink directive adds ?allowEdit=1 to the address
+        fragment="loading" <-adds #loading to the address
+    - do the same programmatically: 
+        -> in home.component.html: (click)="onLoadServers(1)"
+        -> in home.component.ts: onLoadServers(id: number) {this.router.navigate(['/servers', id, 'edit'], {queryParams: {allowEdit: '1'}, fragment: 'loading'});}
+  5. Retrieving query params
+    - get access: in edit-server.component.ts, constructor: private route: ActivatedRoute
+    - in edit-server.component.ts, ngOnInit: 
+      1st approach: does not allow you to react to any changes after the comp has been loaded
+          console.log(this.route.snapshot.queryParams);
+          console.log(this.route.snapshot.fragment);
+      2nd approach: allows you to react to queryParams changes
+          this.route.queryParams.subscribe();
+          this.route.fragment.subscribe();
+
+
+  
+  6. Redirecting and wildcard routes
     - add a new component: ng g c page-not-found
     - app.module.ts: 
       -> {path: 'not-found', component: PageNotFoundComponent}
