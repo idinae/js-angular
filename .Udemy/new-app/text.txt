@@ -279,4 +279,13 @@ XII. ROUTING
     - app.module.ts: 
       -> {path: 'not-found', component: PageNotFoundComponent}
       -> {path: '**', redirectTo: '/not-found'} //at the last of all paths!!!
-      
+  8. Outsourcing the route configuration
+    = app.routing.module.ts <- tipically
+    - all routes are pasted here
+    - add all imports: Ctrl + .
+    - remove RouterModule.forRoot(appRoutes) from app.module.ts
+    - add RouterModule in imports
+    - add in declarations:  imports: [RouterModule.forRoot(appRoutes)]
+    - add exports: [RouterModule]
+    - add AppRoutingModule in imports of app.module.ts
+  9. Routing guards
