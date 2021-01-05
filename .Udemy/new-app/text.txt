@@ -273,8 +273,8 @@ XII. ROUTING
     = child comp load inside the parent comp and not in separate pages
     - app.module.ts: 3rd param in routes: children: [...] <- child routes are inside w/o the name of the parent route
     - in servers.component.html instead of child comp selectors: <router-outlet></router-outlet>
-  
-  6. Redirecting and wildcard routes
+  ! queryParamsHandling: 'preserve' (or 'merge') prop -> we preserve old params properties
+  7. Redirecting and wildcard routes
     - add a new component: ng g c page-not-found
     - app.module.ts: 
       -> {path: 'not-found', component: PageNotFoundComponent}
