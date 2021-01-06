@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CooksComponent } from './cooks/cooks.component';
@@ -16,17 +15,7 @@ import { CooksListComponent } from './cooks-list/cooks-list.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { EditComponent } from './edit/edit.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
-const appRoutes: Routes = [
-  {path: '', component: CooksComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'create', component: CreateComponent},
-  {path: 'details/:id', component: DetailsComponent},
-  {path: 'details/:id/edit', component: EditComponent},
-  {path: 'not-found', component: PageNotFoundComponent},
-  {path: '**', redirectTo: '/not-found'}
-]
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [
@@ -42,12 +31,12 @@ const appRoutes: Routes = [
     CooksListComponent,
     DropdownDirective,
     EditComponent,
-    PageNotFoundComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
