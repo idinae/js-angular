@@ -289,3 +289,12 @@ XII. ROUTING
     - add exports: [RouterModule]
     - add AppRoutingModule in imports of app.module.ts
   9. Routing guards
+    = implements CanActivate package
+    - auth-guard.service.ts
+    - auth.service.ts (a fake service)
+    - app.module.ts: add AuthService and AuthGuard in providers
+    - add canActivate/canActivateChild in routing: canActivateChild: [AuthGuard]
+    - auth-guard.service.ts: implements CanActivateChild
+  10. CanDeactivate
+    = keeping the user from accidentally moving away
+    - 
